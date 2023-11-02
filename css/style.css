@@ -79,7 +79,7 @@ body{
 .messagetime{
     position: absolute;
     top: 5px;
-    right: 5px;
+    right: 7px;
 }
 
 .bg-rightside{
@@ -93,11 +93,18 @@ body{
 .sent{
     background-color: var(--color-sent-message);
     width: 20%;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .received{
     background-color: var(--color-white);
     width: 20%;
-    border-radius: 15px;
+    border-radius: 10px;
+}
+
+.chat-time{
+    position: absolute;
+    bottom: 2px;
+    right: 4px;
+    font-size: 12px;
 }
