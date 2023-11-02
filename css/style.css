@@ -38,6 +38,10 @@ body{
     padding: 0;
 }
 
+.border-bottom{
+    border-bottom: 1px solid black;
+}
+
 .textgrey{
     color: var(--color-text-grey);
 }
@@ -58,9 +62,18 @@ body{
     width: 60px;
 }
 
+.w60{
+    width: 60px;
+}
 
 .bell{
     padding: 10px;
     background-color: var(--color-white);
     border-radius: 50%;
+}
+
+.messagetime{
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }
