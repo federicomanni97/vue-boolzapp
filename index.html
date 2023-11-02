@@ -77,27 +77,30 @@
                             </div>
                         </div>
                         <!--Messages-->
-                        <div class="sent text-end mx-3 position-relative">
-                            <div class="text-start p-3">ciao</div>
-                            <div class="chat-time">
-                                <span>16:00</span>
+                        
+                            <div class="" v-for = "(message, index) in contacts[0].messages">
+                                <div class="d-flex flex-row-reverse">
+                                    <div class="sent mx-3 position-relative" v-if="message.status === 'sent'">
+                                        <div class="text-start px-2 py-4">
+                                            {{message.message}}
+                                        </div>
+                                        <div>
+                                            <span class="chat-time">{{message.date}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="received mx-3 position-relative" v-if="message.status === 'received'">
+                                    <div class="px-2 py-4" >
+                                        {{message.message}}
+                                    </div>
+                                    <div>
+                                        <span class="chat-time">{{message.date}}</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="sent mx-3 position-relative">
-                            <div class="p-3">ciao come stai?</div>
-                            <div class="chat-time">
-                                <span>16:00</span>
-                            </div>
-                        </div>
-                        <div class="received mx-3 position-relative">
-                            <div class="p-3">tutto bene</div>
-                            <div class="chat-time">
-                                <span>16:00</span>
-                            </div>
-                        </div>
                         <div class="input-group">
                             <label class="input-group-text bgheaders lightgrey fs-5 py-3 px-5" for="inputGroupFile02"><i class="fa-regular fa-face-smile"></i></label>
-                            <input type="" class="form-control" id="inputGroupFile02">
+                            <input type="" class="form-control" id="inputGroupFile02" placeholder="Scrivi un messaggio!">
                             <label class="input-group-text bgheaders lightgrey fs-5 px-5" for="inputGroupFile02"><i class="fa-solid fa-microphone"></i></label>
                         </div>
                 </div>

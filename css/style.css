@@ -92,13 +92,13 @@ body{
 
 .sent{
     background-color: var(--color-sent-message);
-    width: 20%;
+    width: 30%;
     border-radius: 10px;
 }
 
 .received{
     background-color: var(--color-white);
-    width: 20%;
+    width: 30%;
     border-radius: 10px;
 }
 
