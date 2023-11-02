@@ -89,3 +89,15 @@ body{
 .p0{
     padding: 0;
 }
+
+.sent{
+    background-color: var(--color-sent-message);
+    width: 20%;
+    border-radius: 15px;
+}
+
+.received{
+    background-color: var(--color-white);
+    width: 20%;
+    border-radius: 15px;
+}
