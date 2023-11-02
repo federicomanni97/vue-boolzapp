@@ -39,7 +39,7 @@ body{
 }
 
 .bordergrey{
-    border: 1px solid var(--color-text-grey);
+    border-right: 1px solid var(--color-text-grey);
 }
 
 .border-bottom{
