@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 p-0">
-                            <div class="d-flex align-items-center pb-2 border-bottom position-relative px-2" v-for = "(contact, index) in contacts">
+                            <div class="d-flex align-items-center pb-2 border-bottom position-relative px-2" v-for = "(contact, index) in contacts" @click ="functionClick(index)">
                                 <img class="rounded-circle w60" :src="contact.avatar" alt="image-chat">
                                 <div class="d-flex flex-column px-3">
                                     <span class="fw-bold">{{contact.name}}</span>
@@ -64,9 +64,9 @@
                 <div class="col-12 col-md-8 bg-rightside p0 d-flex flex-column justify-content-between">
                         <div class="bgheaders d-flex p-2 justify-content-between align-items-center">
                             <div class="user-image d-flex">
-                                <img class="rounded-circle" src="img/avatar_1.jpg" alt="user-avatar">
+                                <img class="rounded-circle" :src="contacts[activeIndex].avatar" alt="user-avatar">
                                 <div class="d-flex flex-column py-1">
-                                    <span class="px-2 fw-bold">Michele</span>
+                                    <span class="px-2 fw-bold">{{contacts[activeIndex].name}}</span>
                                     <span class="px-2">Ultimo accesso oggi alle 12:00</span>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                         </div>
                         <!--Messages-->
                         
-                            <div class="" v-for = "(message, index) in contacts[0].messages">
+                            <div class="" v-for = "(message, index) in contacts[activeIndex].messages">
                                 <div class="d-flex flex-row-reverse">
                                     <div class="sent mx-3 position-relative" v-if="message.status === 'sent'">
                                         <div class="text-start px-2 py-4">
@@ -107,6 +107,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/script.js"></script>
 </body>
