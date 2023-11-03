@@ -8,7 +8,7 @@ createApp({
         
         return {
          messageChat: '',
-        // const resps = '0'
+         response: 'Ok!',
          activeIndex : 0,
             contacts: [
                 {
@@ -195,6 +195,14 @@ createApp({
             }
             this.contacts[this.activeIndex].messages.push(newmsg);
             this.messageChat = '';
+            setTimeout(() =>{
+                 const newmsg = {
+                     date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                     message: this.response,
+                     status: 'received'
+                 }
+                 this.contacts[this.activeIndex].messages.push(newmsg);
+            }, 2000)
         }
     },
 }).mount('#app');
