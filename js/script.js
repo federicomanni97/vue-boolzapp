@@ -1,13 +1,13 @@
 /* */
 const dt = luxon.DateTime;
-const date = dt.now();
+// const date = dt.now();
 
 const {createApp} = Vue;
 createApp({
     data(){
         
         return {
-        //     const message = ''
+         messageChat: '',
         // const resps = '0'
          activeIndex : 0,
             contacts: [
@@ -186,25 +186,15 @@ createApp({
     methods: {
         functionClick(index){
             return this.activeIndex = index;
+        },
+        newMessage(){
+            const newmsg = {
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                message: this.messageChat,
+                status: 'sent'
+            }
+            this.contacts[this.activeIndex].messages.push(newmsg);
+            this.messageChat = '';
         }
-        // newMessage(){
-        //     const newmsg = {
-        //         date: new Date(),
-        //         message: this.message,
-        //         status: 'sent'
-        //     }
-        //     this.activeContact.messages.push(newmsg);
-        //     this.message = '';
-        //     setTimeout(() =>{
-        //         const newmsg = {
-        //             date: new Date(), dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-        //             message: this.resp,
-        //             status: 'sent'
-        //         }
-        //         this.activeContact.messages.push(newmsg);
-
-        //     }, 1000)
-        // }
-        
     },
 }).mount('#app');
