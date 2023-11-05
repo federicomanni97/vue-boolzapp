@@ -80,6 +80,7 @@ body{
     position: absolute;
     top: 5px;
     right: 7px;
+    color: var(--color-text-grey);
 }
 
 .bg-rightside{
@@ -94,6 +95,19 @@ body{
     background-color: var(--color-sent-message);
     width: 30%;
     border-radius: 10px;
+}
+
+.chat:hover{
+    background-color: var(--color-light-icons);
+    cursor: pointer;
+    transition: 1s;
+}
+
+.fa-solid:hover{
+    transition: 0.5s;
+    font-size: 25px;
+    cursor: pointer;
+    color: var(--color-notification);
 }
 
 .received{

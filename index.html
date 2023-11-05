@@ -44,18 +44,18 @@
                                 <span class="input-group-text" id="basic-addon1">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1" v-model="filter">
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 p-0">
-                            <div class="d-flex align-items-center pb-2 border-bottom position-relative px-2" v-for = "(contact, index) in contacts" @click ="functionClick(index)">
+                            <div class="d-flex align-items-center pb-2 border-bottom position-relative px-2 chat" v-for = "(contact, index) in filteredContacts()" @click ="functionClick(index)">
                                 <img class="rounded-circle w60" :src="contact.avatar" alt="image-chat">
                                 <div class="d-flex flex-column px-3">
                                     <span class="fw-bold">{{contact.name}}</span>
-                                    <span class="lightgrey">Ultimo messaggio inviato</span>
+                                    <span class="lightgrey">{{contact.messages[contact.messages.length -1].message}}</span>
                                 </div>
                                 <div class="messagetime">
-                                    <span>12:00</span>
+                                    <span>{{contact.messages[contact.messages.length -1].date}}</span>
                                 </div>    
                             </div>
                         </div>

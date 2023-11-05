@@ -10,6 +10,7 @@ createApp({
          messageChat: '',
          response: 'Ok!',
          activeIndex : 0,
+
             contacts: [
                 {
                     id: 1,
@@ -180,7 +181,8 @@ createApp({
                         }
                     ],
                 }
-            ]            
+            ],  
+            filter: ''       
         }  
     },
     methods: {
@@ -203,6 +205,12 @@ createApp({
                  }
                  this.contacts[this.activeIndex].messages.push(newmsg);
             }, 2000)
+        },
+        filteredContacts(){
+            const filteredNames = this.contacts.filter(element => {
+                return element.name.toLowerCase().includes(this.filter.toLowerCase());
+            })
+            return filteredNames
         }
-    },
+    },    
 }).mount('#app');
