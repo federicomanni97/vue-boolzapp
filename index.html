@@ -44,7 +44,7 @@
                                 <span class="input-group-text" id="basic-addon1">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1" v-model="filter">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1" v-model.trim="filter">
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 p-0">
@@ -67,7 +67,7 @@
                                 <img class="rounded-circle" :src="contacts[activeIndex].avatar" alt="user-avatar">
                                 <div class="d-flex flex-column py-1">
                                     <span class="px-2 fw-bold">{{contacts[activeIndex].name}}</span>
-                                    <span class="px-2">Ultimo accesso oggi alle 12:00</span>
+                                    <span class="px-2 textgrey">Ultimo accesso oggi alle 12:00</span>
                                 </div>
                             </div>
                             <div class="fs-5 textgrey">
@@ -98,10 +98,10 @@
                                     </div>
                                 </div>
                             </div>
-                        <div class="input-group">
+                        <div class="input-group ">
                             <label class="input-group-text bgheaders lightgrey fs-5 py-3 px-5" for="inputGroupFile02"><i class="fa-regular fa-face-smile"></i></label>
-                            <input type="" class="form-control" id="inputGroupFile02" placeholder="Scrivi un messaggio!" v-model="messageChat" @keyup.enter = "newMessage()">
-                            <label class="input-group-text bgheaders lightgrey fs-5 px-5" for="inputGroupFile02"><i class="fa-solid fa-microphone"></i></label>
+                            <input type="" class="form-control" id="inputGroupFile02" placeholder="Scrivi un messaggio!" v-model.trim="messageChat" @keyup.enter = "newMessage()">
+                            <label class="input-group-text bgheaders lightgrey fs-5 px-5" for="inputGroupFile02"><i class="pointer-event fa-solid fa-microphone" :class="paperPlane()" @click="newMessage()"></i></label>
                         </div>
                 </div>
             </div>

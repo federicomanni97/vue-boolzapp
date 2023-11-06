@@ -10,6 +10,7 @@ createApp({
          messageChat: '',
          response: 'Ok!',
          activeIndex : 0,
+         flag: true,
 
             contacts: [
                 {
@@ -195,6 +196,7 @@ createApp({
                 message: this.messageChat,
                 status: 'sent'
             }
+            if (this.messageChat !== ''){
             this.contacts[this.activeIndex].messages.push(newmsg);
             this.messageChat = '';
             setTimeout(() =>{
@@ -205,12 +207,19 @@ createApp({
                  }
                  this.contacts[this.activeIndex].messages.push(newmsg);
             }, 2000)
+          }
         },
         filteredContacts(){
             const filteredNames = this.contacts.filter(element => {
                 return element.name.toLowerCase().includes(this.filter.toLowerCase());
             })
             return filteredNames
+        },
+        paperPlane(){
+            if (this.messageChat !== ''){
+                return 'fa-solid fa-paper-plane'
+            }
+
         }
     },    
 }).mount('#app');
