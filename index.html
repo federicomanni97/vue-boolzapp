@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="img/logo-bool.png">
     <meta name= "viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -63,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-8 bg-rightside p0 d-flex flex-column justify-content-between">
+                <div class="col-12 col-md-8 bg-rightside p-0 d-flex flex-column">
                         <div class="bgheaders d-flex p-2 justify-content-between align-items-center">
                             <div class="user-image d-flex">
                                 <img class="rounded-circle" :src="contacts[activeIndex].avatar" alt="user-avatar">
@@ -79,9 +80,9 @@
                             </div>
                         </div>
                         <!--Messages-->
-                        
+                        <div class="h0 d-flex flex-grow-1 flex-column overflow-y-auto">
                             <div class="" v-for = "(message, index) in contacts[activeIndex].messages">
-                                <div class="d-flex flex-row-reverse">
+                                <div class="d-flex flex-row-reverse my-2">
                                     <div class="sent mx-3 position-relative" v-if="message.status === 'sent'">
                                         <div class="text-start px-2 py-4">
                                             {{message.message}}
@@ -91,7 +92,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="received mx-3 position-relative" v-if="message.status === 'received'">
+                                <div class="received mx-3 my-2 position-relative" v-if="message.status === 'received'">
                                     <div class="px-2 py-4" >
                                         {{message.message}}
                                     </div>
@@ -100,11 +101,12 @@
                                     </div>
                                 </div>
                             </div>
-                        <div class="input-group ">
-                            <label class="input-group-text bgheaders lightgrey fs-5 py-3 px-5" for="inputGroupFile02"><i class="fa-regular fa-face-smile"></i></label>
-                            <input type="" class="form-control" id="inputGroupFile02" placeholder="Scrivi un messaggio!" v-model.trim="messageChat" @keyup.enter = "newMessage()">
-                            <label class="input-group-text bgheaders lightgrey fs-5 px-5" for="inputGroupFile02"><i class="pointer-event fa-solid fa-microphone" :class="paperPlane()" @click="newMessage()"></i></label>
                         </div>
+                            <div class="input-group ">
+                                <label class="input-group-text bgheaders lightgrey fs-5 py-3 px-5" for="inputGroupFile02"><i class="fa-regular fa-face-smile"></i></label>
+                                <input type="" class="form-control" id="inputGroupFile02" placeholder="Scrivi un messaggio!" v-model.trim="messageChat" @keyup.enter = "newMessage()">
+                                <label class="input-group-text bgheaders lightgrey fs-5 px-5" for="inputGroupFile02"><i class="pointer-event fa-solid fa-microphone" :class="paperPlane()" @click="newMessage()"></i></label>
+                            </div>
                 </div>
             </div>
         </div>
