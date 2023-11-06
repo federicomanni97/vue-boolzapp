@@ -11,7 +11,7 @@ createApp({
          response: 'Ok!',
          activeIndex : 0,
          flag: true,
-
+         statusFunction: false,
             contacts: [
                 {
                     id: 1,
@@ -217,9 +217,8 @@ createApp({
         },
         paperPlane(){
             if (this.messageChat !== ''){
-                return 'fa-solid fa-paper-plane'
+                return 'fa-solid fa-paper-plane my-blue'
             }
-
-        }
-    },    
+        },
+    },
 }).mount('#app');

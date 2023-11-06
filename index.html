@@ -20,8 +20,10 @@
                         <div class="col-12 bgheaders">
                             <div class="m-2 d-flex justify-content-between align-items-center">
                                 <div class="user-image">
-                                    <img class="rounded-circle" src="img/avatar_4.jpg" alt="user-avatar">
-                                    <span class="px-2 fw-bold">Federico</span>
+                                    <img class="rounded-circle" src="img/avatar_4.jpg" alt="user-avatar">   
+                                        <span class="px-2 fw-bold">Federico</span>
+                                        <span class="statusCircle" v-if="statusFunction === false"><i class="fa-solid fa-circle" @click="statusFunction = !statusFunction"></i> Online</span>
+                                        <span class="statusOffline" v-else><i class="fa-solid fa-circle" @click="statusFunction = !statusFunction"></i> Non disponibile</span>
                                 </div>
                                 <div class="fs-5 textgrey">
                                     <span><i class="fa-solid fa-circle-notch px-2"></i></span>
