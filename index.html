@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0 p-0">
-                            <div class="d-flex align-items-center pb-2 border-bottom position-relative px-2 chat" v-for = "(contact, index) in filteredContacts()" @click ="functionClick(index)">
+                            <div class="d-flex align-items-center p-2 border-bottom position-relative chat" :class="activeContact(contact.id)" v-for = "(contact, index) in filteredContacts()" @click ="functionClick(index), activeContact(id)">
                                 <img class="rounded-circle w60" :src="contact.avatar" alt="image-chat">
                                 <div class="d-flex flex-column px-3">
                                     <span class="fw-bold">{{contact.name}}</span>

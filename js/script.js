@@ -220,5 +220,10 @@ createApp({
                 return 'fa-solid fa-paper-plane my-blue'
             }
         },
+        activeContact(id){
+            if (this.contacts[this.activeIndex].id === id){
+                return 'active'                
+            }
+        }
     },
 }).mount('#app');
